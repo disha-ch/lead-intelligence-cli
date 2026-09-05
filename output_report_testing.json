@@ -19,7 +19,8 @@
         "reason": "Low industry fit",
         "count": 1
       }
-    ]
+    ],
+    "priority_queue_size": 11
   },
   "leads": [
     {
@@ -47,7 +48,8 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "validation",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 2,
@@ -65,14 +67,15 @@
       "decision": "qualified",
       "priority": "high",
       "reasoning": "High industry fit and recent interaction",
-      "outreach_message": "Hi Test_VeryLargeEnterprise, thanks for requesting a demo for Global Fortune 500 Corp. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_VeryLargeEnterprise, regarding the demo request for Global Fortune 500 Corp, would you be open to a short conversation about current priorities in Enterprise Software?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 5
     },
     {
       "lead_id": 3,
@@ -97,7 +100,8 @@
       "llm_decision": "rejected",
       "agrees_with_baseline": true,
       "reasoning_source": "deterministic_fallback",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 4,
@@ -115,14 +119,15 @@
       "decision": "qualified",
       "priority": "medium",
       "reasoning": "Recent interaction despite low industry fit",
-      "outreach_message": "Hi Test_StaleInteraction, following the recent sales call for Old Company Inc. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_StaleInteraction, I’m following up on the recent sales call for Old Company Inc. Would you be available for a brief conversation about your Manufacturing priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 10
     },
     {
       "lead_id": 5,
@@ -140,14 +145,15 @@
       "decision": "qualified",
       "priority": "high",
       "reasoning": "High industry fit and recent interaction",
-      "outreach_message": "Hi Test_RecentEngagement, thanks for requesting a demo for Hot Lead Corp. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_RecentEngagement, regarding the demo request for Hot Lead Corp, would you be open to a short conversation about current priorities in SaaS?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 1
     },
     {
       "lead_id": 6,
@@ -175,7 +181,8 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "validation",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 7,
@@ -200,7 +207,8 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 8,
@@ -218,14 +226,15 @@
       "decision": "qualified",
       "priority": "medium",
       "reasoning": "Limited company-size fit, strong industry alignment, high-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Test_VeryRecentSignup, thanks for requesting a demo for Brand New Startup. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_VeryRecentSignup, regarding the demo request for Brand New Startup, would you be open to a short conversation about current priorities in SaaS?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "deterministic_fallback",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 6
     },
     {
       "lead_id": 9,
@@ -243,14 +252,15 @@
       "decision": "qualified",
       "priority": "high",
       "reasoning": "High company size and recent interaction",
-      "outreach_message": "Hi Test_MultipleInteractions, thanks for requesting a demo for Active Company. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_MultipleInteractions, thanks for your demo request involving Active Company. Is there a convenient time to discuss your current Finance priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 2
     },
     {
       "lead_id": 10,
@@ -268,14 +278,15 @@
       "decision": "qualified",
       "priority": "medium",
       "reasoning": "Recent interaction and moderate fit",
-      "outreach_message": "Hi Test_NoSourceInfo, following your recent interaction for Source Unknown Corp. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_NoSourceInfo, I’m following up on the recent interaction for Source Unknown Corp. Would you be available for a brief conversation about your Retail priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 11
     },
     {
       "lead_id": 11,
@@ -293,14 +304,15 @@
       "decision": "qualified",
       "priority": "high",
       "reasoning": "High fit and recent interaction",
-      "outreach_message": "Hi Test_HighValueMatch, thanks for requesting a demo for Perfect Fit Enterprise. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_HighValueMatch, regarding the demo request for Perfect Fit Enterprise, would you be open to a short conversation about current priorities in SaaS?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 3
     },
     {
       "lead_id": 12,
@@ -325,7 +337,8 @@
       "llm_decision": "rejected",
       "agrees_with_baseline": true,
       "reasoning_source": "deterministic_fallback",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 13,
@@ -352,7 +365,8 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "validation",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 14,
@@ -381,7 +395,8 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "validation",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 15,
@@ -409,7 +424,8 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "validation",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 16,
@@ -427,14 +443,15 @@
       "decision": "qualified",
       "priority": "medium",
       "reasoning": "High company size and recent interaction",
-      "outreach_message": "Hi Test_WeekOldInteraction, thanks for attending the recent webinar for Week Old Corp. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_WeekOldInteraction, I’m following up on the recent webinar attendance for Week Old Corp. Would you be available for a brief conversation about your Logistics priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 7
     },
     {
       "lead_id": 17,
@@ -452,14 +469,15 @@
       "decision": "qualified",
       "priority": "medium",
       "reasoning": "Strong industry fit and moderate recency",
-      "outreach_message": "Hi Test_MidMarketSoft, following your recent content download for Mid Market Software. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_MidMarketSoft, regarding the recent content download for Mid Market Software, would you be open to a short conversation about current priorities in SaaS?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 8
     },
     {
       "lead_id": 18,
@@ -484,7 +502,8 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": NaN
+      "outreach_source": NaN,
+      "priority_rank": null
     },
     {
       "lead_id": 19,
@@ -502,14 +521,15 @@
       "decision": "qualified",
       "priority": "medium",
       "reasoning": "Moderate size and recent interaction",
-      "outreach_message": "Hi Test_GovernmentBuyer, following the recent sales call for Government Tech. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_GovernmentBuyer, I’m following up on the recent sales call for Government Tech. Would you be available for a brief conversation about your Government priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 9
     },
     {
       "lead_id": 20,
@@ -527,14 +547,15 @@
       "decision": "qualified",
       "priority": "high",
       "reasoning": "High company size and high priority",
-      "outreach_message": "Hi Test_SMBAverage, thanks for requesting a demo for Average SMB Co. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Test_SMBAverage, regarding the demo request for Average SMB Co, would you be open to a short conversation about current priorities in Retail?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
       "llm_decision": "qualified",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": "grounded_template"
+      "outreach_source": "grounded_template",
+      "priority_rank": 4
     }
   ],
   "sample_outreach_messages": [
@@ -542,31 +563,121 @@
       "lead_id": 2,
       "name": "Test_VeryLargeEnterprise",
       "company": "Global Fortune 500 Corp",
-      "message": "Hi Test_VeryLargeEnterprise, thanks for requesting a demo for Global Fortune 500 Corp. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Test_VeryLargeEnterprise, regarding the demo request for Global Fortune 500 Corp, would you be open to a short conversation about current priorities in Enterprise Software?"
     },
     {
       "lead_id": 4,
       "name": "Test_StaleInteraction",
       "company": "Old Company Inc",
-      "message": "Hi Test_StaleInteraction, following the recent sales call for Old Company Inc. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Test_StaleInteraction, I’m following up on the recent sales call for Old Company Inc. Would you be available for a brief conversation about your Manufacturing priorities?"
     },
     {
       "lead_id": 5,
       "name": "Test_RecentEngagement",
       "company": "Hot Lead Corp",
-      "message": "Hi Test_RecentEngagement, thanks for requesting a demo for Hot Lead Corp. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Test_RecentEngagement, regarding the demo request for Hot Lead Corp, would you be open to a short conversation about current priorities in SaaS?"
     },
     {
       "lead_id": 8,
       "name": "Test_VeryRecentSignup",
       "company": "Brand New Startup",
-      "message": "Hi Test_VeryRecentSignup, thanks for requesting a demo for Brand New Startup. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Test_VeryRecentSignup, regarding the demo request for Brand New Startup, would you be open to a short conversation about current priorities in SaaS?"
     },
     {
       "lead_id": 9,
       "name": "Test_MultipleInteractions",
       "company": "Active Company",
-      "message": "Hi Test_MultipleInteractions, thanks for requesting a demo for Active Company. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Test_MultipleInteractions, thanks for your demo request involving Active Company. Is there a convenient time to discuss your current Finance priorities?"
+    }
+  ],
+  "priority_queue": [
+    {
+      "priority_rank": 1,
+      "lead_id": 5,
+      "name": "Test_RecentEngagement",
+      "company": "Hot Lead Corp",
+      "score": 10,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 2,
+      "lead_id": 9,
+      "name": "Test_MultipleInteractions",
+      "company": "Active Company",
+      "score": 9,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 3,
+      "lead_id": 11,
+      "name": "Test_HighValueMatch",
+      "company": "Perfect Fit Enterprise",
+      "score": 9,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 4,
+      "lead_id": 20,
+      "name": "Test_SMBAverage",
+      "company": "Average SMB Co",
+      "score": 9,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 5,
+      "lead_id": 2,
+      "name": "Test_VeryLargeEnterprise",
+      "company": "Global Fortune 500 Corp",
+      "score": 8,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 6,
+      "lead_id": 8,
+      "name": "Test_VeryRecentSignup",
+      "company": "Brand New Startup",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 7,
+      "lead_id": 16,
+      "name": "Test_WeekOldInteraction",
+      "company": "Week Old Corp",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 8,
+      "lead_id": 17,
+      "name": "Test_MidMarketSoft",
+      "company": "Mid Market Software",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 9,
+      "lead_id": 19,
+      "name": "Test_GovernmentBuyer",
+      "company": "Government Tech",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 10,
+      "lead_id": 4,
+      "name": "Test_StaleInteraction",
+      "company": "Old Company Inc",
+      "score": 6,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 11,
+      "lead_id": 10,
+      "name": "Test_NoSourceInfo",
+      "company": "Source Unknown Corp",
+      "score": 6,
+      "priority": "medium"
     }
   ]
 }

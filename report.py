@@ -68,6 +68,7 @@ def generate_report(leads: pd.DataFrame) -> dict[str, Any]:
                 "factor_scores": factor_scores,
                 "decision": final_decision,
                 "priority": priority,
+                "priority_rank": None,
                 "reasoning": lead["llm_reasoning"],
                 "outreach_message": outreach,
                 "validation_status": lead["validation_status"],
@@ -79,6 +80,25 @@ def generate_report(leads: pd.DataFrame) -> dict[str, Any]:
                 "outreach_source": lead["outreach_source"],
             }
         )
+
+    priority_queue = sorted(
+        (record for record in records if record["decision"] == "qualified"),
+        key=lambda record: (-record["score"], record["lead_id"]),
+    )
+    for rank, record in enumerate(priority_queue, start=1):
+        record["priority_rank"] = rank
+
+    ranked_queue = [
+        {
+            "priority_rank": record["priority_rank"],
+            "lead_id": record["lead_id"],
+            "name": record["name"],
+            "company": record["company"],
+            "score": record["score"],
+            "priority": record["priority"],
+        }
+        for record in priority_queue
+    ]
 
     decision_counts = Counter(record["decision"] for record in records)
     total = len(records)
@@ -100,6 +120,7 @@ def generate_report(leads: pd.DataFrame) -> dict[str, Any]:
             "qualified": qualified,
             "review": decision_counts["review"],
             "rejected": decision_counts["rejected"],
+            "priority_queue_size": len(ranked_queue),
             "qualified_percentage": round(qualified / total * 100, 1) if total else 0,
             "llm_agreement_percentage": round(
                 sum(record["agrees_with_baseline"] for record in records)
@@ -114,6 +135,7 @@ def generate_report(leads: pd.DataFrame) -> dict[str, Any]:
                 for reason, count in rejection_reasons.most_common()
             ],
         },
+        "priority_queue": ranked_queue,
         "leads": records,
         "sample_outreach_messages": outreach_examples,
     }

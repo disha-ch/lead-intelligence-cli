@@ -76,3 +76,16 @@ thresholds:
   - {min_score: 6, max_score: 7, decision: qualified, priority: medium}
   - {min_score: 4, max_score: 5, decision: review, priority: null}
   - {min_score: 0, max_score: 3, decision: rejected, priority: null}
+
+outreach:
+  source_activities:
+    inbound demo request: demo request
+    referral: referral
+    sales call: recent sales call
+    webinar attendee: recent webinar attendance
+    content download: recent content download
+    linkedin outreach: recent LinkedIn outreach
+  templates:
+    - "Hi {first_name}, I’m following up on the {activity} for {company}. Would you be available for a brief conversation about your {industry} priorities?"
+    - "Hi {first_name}, regarding the {activity} for {company}, would you be open to a short conversation about current priorities in {industry}?"
+    - "Hi {first_name}, thanks for your {activity} involving {company}. Is there a convenient time to discuss your current {industry} priorities?"

@@ -60,30 +60,36 @@ RESPONSE_SCHEMA = {
 }
 
 
-def _build_neutral_outreach(lead: dict[str, Any]) -> str:
-    """Build grounded outreach when LLM outreach fails validation.
+def build_grounded_outreach(
+    lead: dict[str, Any], config: dict[str, Any]
+) -> str:
+    """Build one of the configured grounded outreach variants.
 
     Args:
         lead: Original lead submitted to Ollama.
+        config: Validated project configuration.
 
     Returns:
         A neutral message containing only supplied lead information.
     """
     first_name = str(lead["name"]).split()[0]
     company = str(lead["company"])
+    industry = str(lead["industry"])
     source = str(lead["source"]).casefold()
-    openings = {
-        "inbound demo request": "thanks for requesting a demo",
-        "referral": "following the referral",
-        "sales call": "following the recent sales call",
-        "webinar attendee": "thanks for attending the recent webinar",
-        "content download": "following your recent content download",
-        "linkedin outreach": "following the recent LinkedIn outreach",
-    }
-    opening = openings.get(source, "following your recent interaction")
-    return (
-        f"Hi {first_name}, {opening} for {company}. Would you be available for "
-        "a brief conversation about your current priorities?"
+    outreach_config = config["outreach"]
+    activity = outreach_config["source_activities"].get(
+        source, "recent interaction"
+    )
+    templates = outreach_config["templates"]
+    try:
+        variant_index = (int(lead["lead_id"]) - 1) % len(templates)
+    except (TypeError, ValueError):
+        variant_index = sum(map(ord, str(lead["lead_id"]))) % len(templates)
+    return templates[variant_index].format(
+        first_name=first_name,
+        company=company,
+        industry=industry,
+        activity=activity,
     )
 
 
@@ -235,7 +241,7 @@ def _analyze_batch(
             review["reasoning_source"] = "deterministic_fallback"
 
         if review["llm_decision"] == "qualified":
-            review["outreach_message"] = _build_neutral_outreach(baseline)
+            review["outreach_message"] = build_grounded_outreach(baseline, config)
             review["outreach_source"] = "grounded_template"
         else:
             review["outreach_message"] = None

@@ -39,7 +39,13 @@ def load_config(config_path: Path = DEFAULT_CONFIG_PATH) -> dict[str, Any]:
     if not isinstance(config, dict):
         raise ValueError("Configuration must contain a YAML mapping")
 
-    required_sections = {"evaluation_date", "batch_size", "qualification", "thresholds"}
+    required_sections = {
+        "evaluation_date",
+        "batch_size",
+        "qualification",
+        "thresholds",
+        "outreach",
+    }
     missing_sections = required_sections - config.keys()
     if missing_sections:
         missing = ", ".join(sorted(missing_sections))
@@ -64,5 +70,16 @@ def load_config(config_path: Path = DEFAULT_CONFIG_PATH) -> dict[str, Any]:
 
     if not isinstance(config["thresholds"], list) or not config["thresholds"]:
         raise ValueError("thresholds must be a non-empty list")
+
+    outreach = config["outreach"]
+    templates = outreach.get("templates") if isinstance(outreach, dict) else None
+    if (
+        not isinstance(templates, list)
+        or len(templates) < 2
+        or not all(isinstance(template, str) and template for template in templates)
+    ):
+        raise ValueError("outreach.templates must contain at least two templates")
+    if not isinstance(outreach.get("source_activities"), dict):
+        raise ValueError("outreach.source_activities must be a YAML mapping")
 
     return config

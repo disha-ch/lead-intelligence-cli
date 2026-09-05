@@ -1,10 +1,11 @@
 {
   "summary": {
-    "total_processed": 29,
-    "qualified": 22,
+    "total_processed": 30,
+    "qualified": 23,
     "review": 5,
     "rejected": 2,
-    "qualified_percentage": 75.9,
+    "priority_queue_size": 23,
+    "qualified_percentage": 76.7,
     "llm_agreement_percentage": 100.0,
     "common_rejection_reasons": [
       {
@@ -21,6 +22,192 @@
       }
     ]
   },
+  "priority_queue": [
+    {
+      "priority_rank": 1,
+      "lead_id": 1,
+      "name": "Alice Chen",
+      "company": "CloudScale AI",
+      "score": 10,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 2,
+      "lead_id": 10,
+      "name": "Jack White",
+      "company": "Digital Marketing Agency",
+      "score": 9,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 3,
+      "lead_id": 14,
+      "name": "Nathan Brooks",
+      "company": "Enterprise Solutions Corp",
+      "score": 9,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 4,
+      "lead_id": 19,
+      "name": "Samuel Lee",
+      "company": "Cybersecurity Startup",
+      "score": 9,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 5,
+      "lead_id": 30,
+      "name": "Noah Williams",
+      "company": "Cloud Security Labs",
+      "score": 9,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 6,
+      "lead_id": 5,
+      "name": "Emma Thompson",
+      "company": "RetailWorks Solutions",
+      "score": 8,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 7,
+      "lead_id": 8,
+      "name": "Henry Park",
+      "company": "EdTech Innovations",
+      "score": 8,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 8,
+      "lead_id": 22,
+      "name": "Victor Moore",
+      "company": "Real Estate Platform",
+      "score": 8,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 9,
+      "lead_id": 24,
+      "name": "Xavier Lopez",
+      "company": "Data Analytics Firm",
+      "score": 8,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 10,
+      "lead_id": 26,
+      "name": "Zara Hassan",
+      "company": "Education Institution",
+      "score": 8,
+      "priority": "high"
+    },
+    {
+      "priority_rank": 11,
+      "lead_id": 6,
+      "name": "Frank Liu",
+      "company": "Healthcare Systems Ltd",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 12,
+      "lead_id": 11,
+      "name": "Karen Miller",
+      "company": "InsurancePro",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 13,
+      "lead_id": 12,
+      "name": "Leon Chen",
+      "company": "FinTech Startup",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 14,
+      "lead_id": 17,
+      "name": "Quinn Matthews",
+      "company": "Consulting Firm",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 15,
+      "lead_id": 20,
+      "name": "Tina Patel",
+      "company": "Energy Solutions",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 16,
+      "lead_id": 23,
+      "name": "Wendy Zhang",
+      "company": "Fashion Brand",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 17,
+      "lead_id": 25,
+      "name": "Yuki Tanaka",
+      "company": "Travel Technology",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 18,
+      "lead_id": 28,
+      "name": "Bella Cross",
+      "company": "Legal Services Firm",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 19,
+      "lead_id": 29,
+      "name": "Cassandra Jones",
+      "company": "Media & Entertainment",
+      "score": 7,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 20,
+      "lead_id": 4,
+      "name": "David Moore",
+      "company": "StartupXYZ",
+      "score": 6,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 21,
+      "lead_id": 16,
+      "name": "Pamela White",
+      "company": "Pharma Research Inc",
+      "score": 6,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 22,
+      "lead_id": 18,
+      "name": "Rachel Kim",
+      "company": "Government Agency",
+      "score": 6,
+      "priority": "medium"
+    },
+    {
+      "priority_rank": 23,
+      "lead_id": 27,
+      "name": "Aaron Benj",
+      "company": "Supply Chain Co",
+      "score": 6,
+      "priority": "medium"
+    }
+  ],
   "leads": [
     {
       "lead_id": 1,
@@ -37,8 +224,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 1,
       "reasoning": "High industry fit and recent interaction",
-      "outreach_message": "Hi Alice, thanks for requesting a demo for CloudScale AI. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Alice, I’m following up on the demo request for CloudScale AI. Would you be available for a brief conversation about your SaaS priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -62,6 +250,7 @@
       },
       "decision": "review",
       "priority": null,
+      "priority_rank": null,
       "reasoning": "Limited company-size fit, strong industry alignment, lower-intent lead source, recent engagement support the review baseline.",
       "outreach_message": null,
       "validation_status": "valid",
@@ -70,7 +259,7 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "deterministic_fallback",
-      "outreach_source": null
+      "outreach_source": NaN
     },
     {
       "lead_id": 3,
@@ -87,6 +276,7 @@
       },
       "decision": "review",
       "priority": null,
+      "priority_rank": null,
       "reasoning": "Low industry fit and outdated interaction",
       "outreach_message": null,
       "validation_status": "valid",
@@ -95,7 +285,7 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": null
+      "outreach_source": NaN
     },
     {
       "lead_id": 4,
@@ -112,8 +302,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 20,
       "reasoning": "Limited company-size fit, strong industry alignment, high-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi David, following the referral for StartupXYZ. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi David, I’m following up on the referral for StartupXYZ. Would you be available for a brief conversation about your SaaS priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -137,8 +328,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 6,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, older or unclear engagement support the qualified baseline.",
-      "outreach_message": "Hi Emma, thanks for requesting a demo for RetailWorks Solutions. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Emma, regarding the demo request for RetailWorks Solutions, would you be open to a short conversation about current priorities in Retail?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -162,8 +354,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 11,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Frank, following the recent sales call for Healthcare Systems Ltd. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Frank, thanks for your recent sales call involving Healthcare Systems Ltd. Is there a convenient time to discuss your current Healthcare priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -187,6 +380,7 @@
       },
       "decision": "review",
       "priority": null,
+      "priority_rank": null,
       "reasoning": "Low interaction recency and industry fit",
       "outreach_message": null,
       "validation_status": "valid",
@@ -195,7 +389,7 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": null
+      "outreach_source": NaN
     },
     {
       "lead_id": 8,
@@ -212,8 +406,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 7,
       "reasoning": "Strong company-size fit, strong industry alignment, lower-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Henry, following your recent content download for EdTech Innovations. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Henry, regarding the recent content download for EdTech Innovations, would you be open to a short conversation about current priorities in EdTech?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -237,6 +432,7 @@
       },
       "decision": "review",
       "priority": null,
+      "priority_rank": null,
       "reasoning": "Low source and interaction recency",
       "outreach_message": null,
       "validation_status": "valid",
@@ -245,7 +441,7 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": null
+      "outreach_source": NaN
     },
     {
       "lead_id": 10,
@@ -262,8 +458,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 2,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Jack, thanks for requesting a demo for Digital Marketing Agency. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Jack, I’m following up on the demo request for Digital Marketing Agency. Would you be available for a brief conversation about your Marketing priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -287,8 +484,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 12,
       "reasoning": "High company size and recent interaction",
-      "outreach_message": "Hi Karen, following the recent sales call for InsurancePro. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Karen, regarding the recent sales call for InsurancePro, would you be open to a short conversation about current priorities in Insurance?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -312,8 +510,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 13,
       "reasoning": "Strong industry fit and recent interaction",
-      "outreach_message": "Hi Leon, following the referral for FinTech Startup. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Leon, thanks for your referral involving FinTech Startup. Is there a convenient time to discuss your current FinTech priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -337,6 +536,7 @@
       },
       "decision": "review",
       "priority": null,
+      "priority_rank": null,
       "reasoning": "Low industry fit and source",
       "outreach_message": null,
       "validation_status": "valid",
@@ -345,7 +545,7 @@
       "llm_decision": "review",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": null
+      "outreach_source": NaN
     },
     {
       "lead_id": 14,
@@ -362,8 +562,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 3,
       "reasoning": "High industry fit and source",
-      "outreach_message": "Hi Nathan, thanks for requesting a demo for Enterprise Solutions Corp. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Nathan, regarding the demo request for Enterprise Solutions Corp, would you be open to a short conversation about current priorities in Software?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -387,6 +588,7 @@
       },
       "decision": "rejected",
       "priority": null,
+      "priority_rank": null,
       "reasoning": "Low interaction recency and industry fit",
       "outreach_message": null,
       "validation_status": "valid",
@@ -395,7 +597,7 @@
       "llm_decision": "rejected",
       "agrees_with_baseline": true,
       "reasoning_source": "llm",
-      "outreach_source": null
+      "outreach_source": NaN
     },
     {
       "lead_id": 16,
@@ -412,8 +614,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 21,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, older or unclear engagement support the qualified baseline.",
-      "outreach_message": "Hi Pamela, following the recent sales call for Pharma Research Inc. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Pamela, I’m following up on the recent sales call for Pharma Research Inc. Would you be available for a brief conversation about your Pharmaceuticals priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -437,8 +640,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 14,
       "reasoning": "Strong company-size fit, limited industry alignment, lower-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Quinn, thanks for attending the recent webinar for Consulting Firm. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Quinn, regarding the recent webinar attendance for Consulting Firm, would you be open to a short conversation about current priorities in Consulting?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -462,8 +666,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 22,
       "reasoning": "Strong company-size fit, limited industry alignment, lower-intent lead source, older or unclear engagement support the qualified baseline.",
-      "outreach_message": "Hi Rachel, following your recent content download for Government Agency. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Rachel, thanks for your recent content download involving Government Agency. Is there a convenient time to discuss your current Government priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -487,8 +692,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 4,
       "reasoning": "High industry fit and source",
-      "outreach_message": "Hi Samuel, following the referral for Cybersecurity Startup. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Samuel, I’m following up on the referral for Cybersecurity Startup. Would you be available for a brief conversation about your Cybersecurity priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -512,8 +718,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 15,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, older or unclear engagement support the qualified baseline.",
-      "outreach_message": "Hi Tina, thanks for requesting a demo for Energy Solutions. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Tina, regarding the demo request for Energy Solutions, would you be open to a short conversation about current priorities in Energy?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -537,6 +744,7 @@
       },
       "decision": "rejected",
       "priority": null,
+      "priority_rank": null,
       "reasoning": "Limited company-size fit, limited industry alignment, lower-intent lead source, recent engagement support the rejected baseline.",
       "outreach_message": null,
       "validation_status": "valid",
@@ -545,7 +753,7 @@
       "llm_decision": "rejected",
       "agrees_with_baseline": true,
       "reasoning_source": "deterministic_fallback",
-      "outreach_source": null
+      "outreach_source": NaN
     },
     {
       "lead_id": 22,
@@ -562,8 +770,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 8,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Victor, following the recent sales call for Real Estate Platform. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Victor, I’m following up on the recent sales call for Real Estate Platform. Would you be available for a brief conversation about your Real Estate priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -587,8 +796,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 16,
       "reasoning": "Strong company-size fit, limited industry alignment, lower-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Wendy, following your recent content download for Fashion Brand. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Wendy, regarding the recent content download for Fashion Brand, would you be open to a short conversation about current priorities in Retail?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -612,8 +822,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 9,
       "reasoning": "Strong company-size fit, strong industry alignment, lower-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Xavier, thanks for attending the recent webinar for Data Analytics Firm. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Xavier, thanks for your recent webinar attendance involving Data Analytics Firm. Is there a convenient time to discuss your current Analytics priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -637,8 +848,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 17,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Yuki, following the referral for Travel Technology. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Yuki, I’m following up on the referral for Travel Technology. Would you be available for a brief conversation about your Travel priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -662,8 +874,9 @@
       },
       "decision": "qualified",
       "priority": "high",
+      "priority_rank": 10,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, older or unclear engagement support the qualified baseline.",
-      "outreach_message": "Hi Zara, thanks for requesting a demo for Education Institution. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Zara, regarding the demo request for Education Institution, would you be open to a short conversation about current priorities in Education?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -687,8 +900,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 23,
       "reasoning": "Strong company-size fit, limited industry alignment, lower-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Aaron, following the recent LinkedIn outreach for Supply Chain Co. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Aaron, thanks for your recent LinkedIn outreach involving Supply Chain Co. Is there a convenient time to discuss your current Supply Chain priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -712,8 +926,9 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 18,
       "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, older or unclear engagement support the qualified baseline.",
-      "outreach_message": "Hi Bella, following the recent sales call for Legal Services Firm. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Bella, I’m following up on the recent sales call for Legal Services Firm. Would you be available for a brief conversation about your Legal priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -737,8 +952,35 @@
       },
       "decision": "qualified",
       "priority": "medium",
+      "priority_rank": 19,
       "reasoning": "Strong company-size fit, limited industry alignment, lower-intent lead source, recent engagement support the qualified baseline.",
-      "outreach_message": "Hi Cassandra, following your recent content download for Media & Entertainment. Would you be available for a brief conversation about your current priorities?",
+      "outreach_message": "Hi Cassandra, regarding the recent content download for Media & Entertainment, would you be open to a short conversation about current priorities in Media?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "deterministic_fallback",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 30,
+      "name": "Noah Williams",
+      "company": "Cloud Security Labs",
+      "industry": "Cybersecurity",
+      "source": "Referral",
+      "score": 9,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 2,
+        "lead_source": 2,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "high",
+      "priority_rank": 5,
+      "reasoning": "Strong company-size fit, strong industry alignment, high-intent lead source, recent engagement support the qualified baseline.",
+      "outreach_message": "Hi Noah, thanks for your referral involving Cloud Security Labs. Is there a convenient time to discuss your current Cybersecurity priorities?",
       "validation_status": "valid",
       "validation_issues": [],
       "deterministic_decision": "qualified",
@@ -753,31 +995,31 @@
       "lead_id": 1,
       "name": "Alice Chen",
       "company": "CloudScale AI",
-      "message": "Hi Alice, thanks for requesting a demo for CloudScale AI. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Alice, I’m following up on the demo request for CloudScale AI. Would you be available for a brief conversation about your SaaS priorities?"
     },
     {
       "lead_id": 4,
       "name": "David Moore",
       "company": "StartupXYZ",
-      "message": "Hi David, following the referral for StartupXYZ. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi David, I’m following up on the referral for StartupXYZ. Would you be available for a brief conversation about your SaaS priorities?"
     },
     {
       "lead_id": 5,
       "name": "Emma Thompson",
       "company": "RetailWorks Solutions",
-      "message": "Hi Emma, thanks for requesting a demo for RetailWorks Solutions. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Emma, regarding the demo request for RetailWorks Solutions, would you be open to a short conversation about current priorities in Retail?"
     },
     {
       "lead_id": 6,
       "name": "Frank Liu",
       "company": "Healthcare Systems Ltd",
-      "message": "Hi Frank, following the recent sales call for Healthcare Systems Ltd. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Frank, thanks for your recent sales call involving Healthcare Systems Ltd. Is there a convenient time to discuss your current Healthcare priorities?"
     },
     {
       "lead_id": 8,
       "name": "Henry Park",
       "company": "EdTech Innovations",
-      "message": "Hi Henry, following your recent content download for EdTech Innovations. Would you be available for a brief conversation about your current priorities?"
+      "message": "Hi Henry, regarding the recent content download for EdTech Innovations, would you be open to a short conversation about current priorities in EdTech?"
     }
   ]
 }

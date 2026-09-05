@@ -4,6 +4,8 @@ A command-line tool that validates, scores, reviews, and prioritizes sales leads
 
 ## Architecture
 
+![Lead Intelligence CLI final architecture](assets/lead-intelligence-architecture.png)
+
 ```text
 Input → Validate → Score → LLM Review → Decide → Message → Report
 ```
@@ -43,7 +45,7 @@ python main.py data/leads_testing.csv
 python main.py data/leads_full_scale_100.csv
 ```
 
-Each run writes `output_report.json`. The repository also includes preserved training and testing reports.
+Each run writes `output_report.json`. The repository also includes preserved training and testing reports. Qualified leads are sorted by score, assigned a numeric `priority_rank`, and included in the report's `priority_queue`.
 
 ## Qualification rubric
 
@@ -61,7 +63,7 @@ Decision thresholds:
 - `4–5`: review
 - `0–3`: rejected
 
-All scoring bands, industry groups, thresholds, the evaluation date, and batch size are configurable in `config.yaml`.
+All scoring bands, industry groups, thresholds, the evaluation date, batch size, and outreach templates are configurable in `config.yaml`.
 
 ## LLM review and safeguards
 
@@ -72,7 +74,17 @@ All scoring bands, industry groups, thresholds, the evaluation date, and batch s
 - Role: review the baseline decision and provide short qualitative reasoning
 - Invalid numeric reasoning falls back to a deterministic explanation
 - Failed batches retry once, then become `review` without stopping the run
-- Qualified leads receive grounded, template-based outreach using known lead details only
+- Qualified leads receive one of three grounded outreach variants using known lead details only
+
+## Training result
+
+The corrected 30-lead training run completed in about 2.5 minutes:
+
+- 23 qualified, 5 review, and 2 rejected
+- 100% LLM agreement with the deterministic baseline
+- 20 guarded deterministic reasoning fallbacks
+- 23 ranked leads with grounded outreach messages
+- No failed batches or validation skips
 
 ## Full-scale result
 
@@ -88,8 +100,9 @@ The final 100-lead run completed without failed batches or manual intervention:
 ## Assumptions and limitations
 
 - The sample data has no ground truth; decisions are judged on consistency and explainability.
+- The supplied training CSV contained 29 records (30 lines including its header); one complete synthetic lead was added so the training set now contains the documented 30 leads.
 - Recency uses the fixed evaluation date `2024-01-20` for reproducible historical results.
 - Industry fit reflects the configurable target-market assumptions.
-- Local-model quality and speed depend on hardware. The 100-lead run took about 28 minutes and included significant latency spikes.
+- Local Ollama inference avoids paid API usage and keeps data on-device, with speed as the tradeoff. The 100-lead run took about 28 minutes and included significant latency spikes on the test hardware.
 - The small model often repeats numeric scoring language, so guarded deterministic reasoning is used when necessary.
 - `output_report.json` is overwritten on each run unless copied first.
