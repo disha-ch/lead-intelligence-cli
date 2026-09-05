@@ -1,0 +1,572 @@
+{
+  "summary": {
+    "total_processed": 20,
+    "qualified": 11,
+    "review": 7,
+    "rejected": 2,
+    "qualified_percentage": 55.0,
+    "llm_agreement_percentage": 100.0,
+    "common_rejection_reasons": [
+      {
+        "reason": "Low company-size fit",
+        "count": 2
+      },
+      {
+        "reason": "Low-intent lead source",
+        "count": 2
+      },
+      {
+        "reason": "Low industry fit",
+        "count": 1
+      }
+    ]
+  },
+  "leads": [
+    {
+      "lead_id": 1,
+      "name": "Test_MissingSize",
+      "company": "Test Inc",
+      "industry": "SaaS",
+      "source": "Inbound demo request",
+      "score": 7,
+      "factor_scores": {
+        "company_size": 0,
+        "industry_fit": 2,
+        "lead_source": 3,
+        "interaction_recency": 2
+      },
+      "decision": "review",
+      "priority": null,
+      "reasoning": "Limited company-size fit, strong industry alignment, high-intent lead source, recent engagement support the review baseline.",
+      "outreach_message": null,
+      "validation_status": "review",
+      "validation_issues": [
+        "Missing company size"
+      ],
+      "deterministic_decision": "review",
+      "llm_decision": "review",
+      "agrees_with_baseline": true,
+      "reasoning_source": "validation",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 2,
+      "name": "Test_VeryLargeEnterprise",
+      "company": "Global Fortune 500 Corp",
+      "industry": "Enterprise Software",
+      "source": "Inbound demo request",
+      "score": 8,
+      "factor_scores": {
+        "company_size": 1,
+        "industry_fit": 2,
+        "lead_source": 3,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "high",
+      "reasoning": "High industry fit and recent interaction",
+      "outreach_message": "Hi Test_VeryLargeEnterprise, thanks for requesting a demo for Global Fortune 500 Corp. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 3,
+      "name": "Test_Solo",
+      "company": "John Doe Consulting",
+      "industry": "Consulting",
+      "source": "LinkedIn outreach",
+      "score": 3,
+      "factor_scores": {
+        "company_size": 0,
+        "industry_fit": 1,
+        "lead_source": 0,
+        "interaction_recency": 2
+      },
+      "decision": "rejected",
+      "priority": null,
+      "reasoning": "Limited company-size fit, limited industry alignment, lower-intent lead source, recent engagement support the rejected baseline.",
+      "outreach_message": null,
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "rejected",
+      "llm_decision": "rejected",
+      "agrees_with_baseline": true,
+      "reasoning_source": "deterministic_fallback",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 4,
+      "name": "Test_StaleInteraction",
+      "company": "Old Company Inc",
+      "industry": "Manufacturing",
+      "source": "Sales call",
+      "score": 6,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 1,
+        "lead_source": 2,
+        "interaction_recency": 0
+      },
+      "decision": "qualified",
+      "priority": "medium",
+      "reasoning": "Recent interaction despite low industry fit",
+      "outreach_message": "Hi Test_StaleInteraction, following the recent sales call for Old Company Inc. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 5,
+      "name": "Test_RecentEngagement",
+      "company": "Hot Lead Corp",
+      "industry": "SaaS",
+      "source": "Inbound demo request",
+      "score": 10,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 2,
+        "lead_source": 3,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "high",
+      "reasoning": "High industry fit and recent interaction",
+      "outreach_message": "Hi Test_RecentEngagement, thanks for requesting a demo for Hot Lead Corp. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 6,
+      "name": "Test_MissingDate",
+      "company": "Mystery Co",
+      "industry": "Technology",
+      "source": null,
+      "score": 5,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 2,
+        "lead_source": 0,
+        "interaction_recency": 0
+      },
+      "decision": "review",
+      "priority": null,
+      "reasoning": "Strong company-size fit, strong industry alignment, lower-intent lead source, older or unclear engagement support the review baseline.",
+      "outreach_message": null,
+      "validation_status": "review",
+      "validation_issues": [
+        "Missing lead source",
+        "Missing interaction date"
+      ],
+      "deterministic_decision": "review",
+      "llm_decision": "review",
+      "agrees_with_baseline": true,
+      "reasoning_source": "validation",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 7,
+      "name": "Test_UnknownIndustry",
+      "company": "Mysterious Startup",
+      "industry": "Unknown Sector",
+      "source": "Referral",
+      "score": 5,
+      "factor_scores": {
+        "company_size": 1,
+        "industry_fit": 0,
+        "lead_source": 2,
+        "interaction_recency": 2
+      },
+      "decision": "review",
+      "priority": null,
+      "reasoning": "Unknown industry and low fit",
+      "outreach_message": null,
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "review",
+      "llm_decision": "review",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 8,
+      "name": "Test_VeryRecentSignup",
+      "company": "Brand New Startup",
+      "industry": "SaaS",
+      "source": "Inbound demo request",
+      "score": 7,
+      "factor_scores": {
+        "company_size": 0,
+        "industry_fit": 2,
+        "lead_source": 3,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "medium",
+      "reasoning": "Limited company-size fit, strong industry alignment, high-intent lead source, recent engagement support the qualified baseline.",
+      "outreach_message": "Hi Test_VeryRecentSignup, thanks for requesting a demo for Brand New Startup. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "deterministic_fallback",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 9,
+      "name": "Test_MultipleInteractions",
+      "company": "Active Company",
+      "industry": "Finance",
+      "source": "Inbound demo request",
+      "score": 9,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 1,
+        "lead_source": 3,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "high",
+      "reasoning": "High company size and recent interaction",
+      "outreach_message": "Hi Test_MultipleInteractions, thanks for requesting a demo for Active Company. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 10,
+      "name": "Test_NoSourceInfo",
+      "company": "Source Unknown Corp",
+      "industry": "Retail",
+      "source": "Unknown Source",
+      "score": 6,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 1,
+        "lead_source": 0,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "medium",
+      "reasoning": "Recent interaction and moderate fit",
+      "outreach_message": "Hi Test_NoSourceInfo, following your recent interaction for Source Unknown Corp. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 11,
+      "name": "Test_HighValueMatch",
+      "company": "Perfect Fit Enterprise",
+      "industry": "SaaS",
+      "source": "Inbound demo request",
+      "score": 9,
+      "factor_scores": {
+        "company_size": 2,
+        "industry_fit": 2,
+        "lead_source": 3,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "high",
+      "reasoning": "High fit and recent interaction",
+      "outreach_message": "Hi Test_HighValueMatch, thanks for requesting a demo for Perfect Fit Enterprise. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 12,
+      "name": "Test_LowValueNiche",
+      "company": "Niche Small Op",
+      "industry": "Agriculture",
+      "source": "LinkedIn outreach",
+      "score": 2,
+      "factor_scores": {
+        "company_size": 0,
+        "industry_fit": 0,
+        "lead_source": 0,
+        "interaction_recency": 2
+      },
+      "decision": "rejected",
+      "priority": null,
+      "reasoning": "Limited company-size fit, limited industry alignment, lower-intent lead source, recent engagement support the rejected baseline.",
+      "outreach_message": null,
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "rejected",
+      "llm_decision": "rejected",
+      "agrees_with_baseline": true,
+      "reasoning_source": "deterministic_fallback",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 13,
+      "name": "Test_MissingName",
+      "company": null,
+      "industry": "Consulting",
+      "source": "Sales call",
+      "score": 8,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 1,
+        "lead_source": 2,
+        "interaction_recency": 2
+      },
+      "decision": "review",
+      "priority": null,
+      "reasoning": "Strong company-size fit, limited industry alignment, high-intent lead source, recent engagement support the review baseline.",
+      "outreach_message": null,
+      "validation_status": "review",
+      "validation_issues": [
+        "Missing company"
+      ],
+      "deterministic_decision": "review",
+      "llm_decision": "review",
+      "agrees_with_baseline": true,
+      "reasoning_source": "validation",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 14,
+      "name": "Test_NameOnly",
+      "company": "James Wilson",
+      "industry": null,
+      "source": null,
+      "score": 0,
+      "factor_scores": {
+        "company_size": 0,
+        "industry_fit": 0,
+        "lead_source": 0,
+        "interaction_recency": 0
+      },
+      "decision": "review",
+      "priority": null,
+      "reasoning": "Limited company-size fit, limited industry alignment, lower-intent lead source, older or unclear engagement support the review baseline.",
+      "outreach_message": null,
+      "validation_status": "review",
+      "validation_issues": [
+        "Missing company size",
+        "Missing lead source",
+        "Missing interaction date"
+      ],
+      "deterministic_decision": "review",
+      "llm_decision": "review",
+      "agrees_with_baseline": true,
+      "reasoning_source": "validation",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 15,
+      "name": "Test_PartialData",
+      "company": "Tech Partial",
+      "industry": "SaaS",
+      "source": null,
+      "score": 4,
+      "factor_scores": {
+        "company_size": 0,
+        "industry_fit": 2,
+        "lead_source": 0,
+        "interaction_recency": 2
+      },
+      "decision": "review",
+      "priority": null,
+      "reasoning": "Limited company-size fit, strong industry alignment, lower-intent lead source, recent engagement support the review baseline.",
+      "outreach_message": null,
+      "validation_status": "review",
+      "validation_issues": [
+        "Missing company size",
+        "Missing lead source"
+      ],
+      "deterministic_decision": "review",
+      "llm_decision": "review",
+      "agrees_with_baseline": true,
+      "reasoning_source": "validation",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 16,
+      "name": "Test_WeekOldInteraction",
+      "company": "Week Old Corp",
+      "industry": "Logistics",
+      "source": "Webinar attendee",
+      "score": 7,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 1,
+        "lead_source": 1,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "medium",
+      "reasoning": "High company size and recent interaction",
+      "outreach_message": "Hi Test_WeekOldInteraction, thanks for attending the recent webinar for Week Old Corp. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 17,
+      "name": "Test_MidMarketSoft",
+      "company": "Mid Market Software",
+      "industry": "SaaS",
+      "source": "Content download",
+      "score": 7,
+      "factor_scores": {
+        "company_size": 2,
+        "industry_fit": 2,
+        "lead_source": 1,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "medium",
+      "reasoning": "Strong industry fit and moderate recency",
+      "outreach_message": "Hi Test_MidMarketSoft, following your recent content download for Mid Market Software. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 18,
+      "name": "Test_StartupShutdown",
+      "company": "Failed Startup",
+      "industry": "SaaS",
+      "source": "Referral",
+      "score": 4,
+      "factor_scores": {
+        "company_size": 0,
+        "industry_fit": 2,
+        "lead_source": 2,
+        "interaction_recency": 0
+      },
+      "decision": "review",
+      "priority": null,
+      "reasoning": "Low company size and outdated interaction",
+      "outreach_message": null,
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "review",
+      "llm_decision": "review",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": NaN
+    },
+    {
+      "lead_id": 19,
+      "name": "Test_GovernmentBuyer",
+      "company": "Government Tech",
+      "industry": "Government",
+      "source": "Sales call",
+      "score": 7,
+      "factor_scores": {
+        "company_size": 2,
+        "industry_fit": 1,
+        "lead_source": 2,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "medium",
+      "reasoning": "Moderate size and recent interaction",
+      "outreach_message": "Hi Test_GovernmentBuyer, following the recent sales call for Government Tech. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    },
+    {
+      "lead_id": 20,
+      "name": "Test_SMBAverage",
+      "company": "Average SMB Co",
+      "industry": "Retail",
+      "source": "Inbound demo request",
+      "score": 9,
+      "factor_scores": {
+        "company_size": 3,
+        "industry_fit": 1,
+        "lead_source": 3,
+        "interaction_recency": 2
+      },
+      "decision": "qualified",
+      "priority": "high",
+      "reasoning": "High company size and high priority",
+      "outreach_message": "Hi Test_SMBAverage, thanks for requesting a demo for Average SMB Co. Would you be available for a brief conversation about your current priorities?",
+      "validation_status": "valid",
+      "validation_issues": [],
+      "deterministic_decision": "qualified",
+      "llm_decision": "qualified",
+      "agrees_with_baseline": true,
+      "reasoning_source": "llm",
+      "outreach_source": "grounded_template"
+    }
+  ],
+  "sample_outreach_messages": [
+    {
+      "lead_id": 2,
+      "name": "Test_VeryLargeEnterprise",
+      "company": "Global Fortune 500 Corp",
+      "message": "Hi Test_VeryLargeEnterprise, thanks for requesting a demo for Global Fortune 500 Corp. Would you be available for a brief conversation about your current priorities?"
+    },
+    {
+      "lead_id": 4,
+      "name": "Test_StaleInteraction",
+      "company": "Old Company Inc",
+      "message": "Hi Test_StaleInteraction, following the recent sales call for Old Company Inc. Would you be available for a brief conversation about your current priorities?"
+    },
+    {
+      "lead_id": 5,
+      "name": "Test_RecentEngagement",
+      "company": "Hot Lead Corp",
+      "message": "Hi Test_RecentEngagement, thanks for requesting a demo for Hot Lead Corp. Would you be available for a brief conversation about your current priorities?"
+    },
+    {
+      "lead_id": 8,
+      "name": "Test_VeryRecentSignup",
+      "company": "Brand New Startup",
+      "message": "Hi Test_VeryRecentSignup, thanks for requesting a demo for Brand New Startup. Would you be available for a brief conversation about your current priorities?"
+    },
+    {
+      "lead_id": 9,
+      "name": "Test_MultipleInteractions",
+      "company": "Active Company",
+      "message": "Hi Test_MultipleInteractions, thanks for requesting a demo for Active Company. Would you be available for a brief conversation about your current priorities?"
+    }
+  ]
+}

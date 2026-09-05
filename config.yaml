@@ -1,10 +1,78 @@
-# Qualification rubric and application settings will go here.
-
+# Use a fixed date so the historical sample data produces reproducible scores.
+evaluation_date: "2024-01-20"
 batch_size: 10
 
 qualification:
-  factors: {}
+  company_size:
+    bands:
+      - {min: 50, max: 1000, score: 3}
+      - {min: 1001, max: 5000, score: 2}
+      - {min: 11, max: 49, score: 1}
+      - {min: 5001, max: null, score: 1}
+      - {min: 1, max: 10, score: 0}
+
+  industry_fit:
+    core:
+      - AI/ML
+      - Analytics
+      - Cybersecurity
+      - EdTech
+      - Enterprise Software
+      - FinTech
+      - HealthTech
+      - HR Tech
+      - InsurTech
+      - SaaS
+      - Software
+      - Technology
+    adjacent:
+      - Automotive
+      - Biotech
+      - Business Services
+      - Climate Tech
+      - Construction
+      - Consulting
+      - Cryptocurrency
+      - Education
+      - Energy
+      - Environmental
+      - Finance
+      - Government
+      - Healthcare
+      - Insurance
+      - Legal
+      - Logistics
+      - Manufacturing
+      - Marketing
+      - Media
+      - Pharmaceuticals
+      - Real Estate
+      - Retail
+      - Supply Chain
+      - Telecom
+    scores:
+      core: 2
+      adjacent: 1
+      default: 0
+
+  lead_source:
+    scores:
+      Inbound demo request: 3
+      Referral: 2
+      Sales call: 2
+      Webinar attendee: 1
+      Content download: 1
+      LinkedIn outreach: 0
+    default_score: 0
+
+  interaction_recency:
+    bands:
+      - {min_days: 0, max_days: 30, score: 2}
+      - {min_days: 31, max_days: 90, score: 1}
+      - {min_days: 91, max_days: null, score: 0}
 
 thresholds:
-  qualified: null
-  review: null
+  - {min_score: 8, max_score: 10, decision: qualified, priority: high}
+  - {min_score: 6, max_score: 7, decision: qualified, priority: medium}
+  - {min_score: 4, max_score: 5, decision: review, priority: null}
+  - {min_score: 0, max_score: 3, decision: rejected, priority: null}
