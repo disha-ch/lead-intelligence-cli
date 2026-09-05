@@ -1,0 +1,10 @@
+# Qualification rubric and application settings will go here.
+
+batch_size: 10
+
+qualification:
+  factors: {}
+
+thresholds:
+  qualified: null
+  review: null
